@@ -48,16 +48,7 @@ constructor(string memory _movieName, address payable _movieCreator) public{
     uint256 tokensBought;
   }
 
-  struct WithdrawRequest{
-  	 uint256 amountOfEth;
-     uint256 numberOfVoters;
-  	 string description;
-  	 string receiverDesignation;
-     bool completed;
-     address payable recipient;
-    
-    mapping(address=>bool) voters;
-  }
+ 
 
    movieDetails public movie;
 
@@ -65,7 +56,6 @@ constructor(string memory _movieName, address payable _movieCreator) public{
   mapping (address => bool) public profitAdded;
   mapping (address => investorDetails)public investors;
   mapping (address => uint256 ) public investedAmount;
-  mapping (uint256 => WithdrawRequest) public requests;
   
 
   modifier  onlyOwner() { 
@@ -75,9 +65,7 @@ constructor(string memory _movieName, address payable _movieCreator) public{
   
 //Events
   event TokenSold(address buyer,uint256 amount);
-  event etherWithdrawn(address rec,string designation,uint256 amount);
   event MovieState(State _currentState, uint _currentRate);
-  event etherReleased(uint256 _amount, string _reason); //only owner releases funds small expenses
 
 
 
