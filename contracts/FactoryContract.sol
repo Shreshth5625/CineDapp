@@ -3,7 +3,7 @@ pragma solidity ^0.5.1;
 import "./MovieContract.sol";
 
 contract FactoryContract {
-
+	//addede comment
 	uint public contractCount;
 	address[] public contractContainer;
 	address public recentContract;
